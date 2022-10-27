@@ -1,0 +1,14 @@
+The longitudinal resistivity of the rod can be estimated by using the rule-of-mixture formulas. Based on the known resistivity of the fiber $\rho_{T700}$ and the known fiber volume fraction $\phi$, we can calculate:
+\begin{equation}
+	\rho_{L,CFRP} = \frac{\rho_{T700SC}}{\phi} = \frac{16\cdot10^{-6} \si{\ohm\meter}}{0.6} = 27 \cdot10^{-6} \si{\ohm\meter}
+\end{equation}
+This value is very close to the optimal value of $26.7 \cdot10^{-6}$ \si{\ohm\meter} found in the least square optimization and thus suggests that the optimization result is indeed applicable.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{pictures/transverse_resistivity_experiment.pdf}
+	\caption{a) Experimental setup for the measurement of the through-thickness resistivity using a 4-wire measurement, b) Picture of the 3D-printed test rig using spring-loaded contact pins.}
+	\label{img:transverse_resistivity_experiment}
+\end{figure}
+
+The through-thickness resistivity of the material cannot be estimated with a simple equation and is therefore determined by measuring multiple pieces with the dimensions $(8 \times 0.8 \times 20)$ \si{\milli\meter\cubed}. In this experiment, the pieces are cut from pultruded rods from two shipments. The experimental setup used in this experiment is depicted in figure \ref{img:transverse_resistivity_experiment}. The setup is adapted from comparable measurements where two separate electrodes were used in a 4-wire configuration \cite{Wang.2006}. Four separate electrodes for current introduction are painted on both sides of the specimen using silver paint (RS pro silver conductive paint). Between these electrodes, another pair of electrodes is painted for voltage measurement. The voltage electrodes are placed separately from the current electrodes to exclude contact resistance from the measurement. The specimen is then mounted onto a test rig where spring-loaded gold-covered contact pins are pressed onto each of the six surface electrodes. This method produces very similar results ($<$\SI{2}{\percent} difference) to a much more labor-intensive process of attaching individual wires to each electrode, which seems reasonable due to the high conductivity of the silver paint and sufficiently accurate for the purpose of this study. The measurement is performed using the 4-wire method on a Keithley DMM6500 to exclude cable and contact resistance from the measurement. The use of the 4-wire methods results in measured resistances that are \SI{5}{\percent} to \SI{10}{\percent} smaller when compared to 2-wire measurements. 
