@@ -7,8 +7,7 @@ Created on Thu Oct 27 18:02:25 2022
 
 from typing import List
 
-PATH = r"G:\My Drive\Documents\Projects\2022_tex_figure_grabber"
-FILE = "\\influence_inhomogeneity.tex"
+PATH = r"FILEPATH"
 
 def is_commented(line:str) -> bool:
     """Checks if line is commented or not"""
@@ -24,7 +23,7 @@ def get_figure_name_from_line(line:str) -> str:
 def get_figure_name_from_tex(path:str) -> List[str]:
     '''Grabs a list of all figure names in a tex document'''
     figure_list = []
-    with open(PATH+FILE, "r") as file:
+    with open(path, "r") as file:
         for line in file:
             line = line.strip() # remove spaces
             if len(line) == 0:
@@ -35,10 +34,23 @@ def get_figure_name_from_tex(path:str) -> List[str]:
                 figure_name = get_figure_name_from_line(line=line)
                 figure_list.append(figure_name)
     print(figure_list)
+    return figure_list
+    
+def save_figure_list_to_txt(figure_list:List[str]) -> None:
+    '''Takes a list of figures and and saves them as a txt file'''
+    with open('list_of_figures.txt', "w") as f:
+        for line in figure_list:
+            f.write(f"{line}\n")
+    
         
 def main():
-    get_figure_name_from_tex(PATH + FILE)
-    
+    figure_list = []
+    filenames = ["file1",
+                 'file2']
+    tex_list =  [f'\\{name}.tex' for name in filenames]
+    for file in tex_list:
+        figure_list.extend(get_figure_name_from_tex(PATH + file))
+    save_figure_list_to_txt(figure_list)
     
 if __name__ == "__main__":
     main()
